@@ -1,0 +1,16 @@
+{
+  "proyecto": "Caseta de vigilancia Conjunto Los Pinos",
+  "items": [
+    { "material": "Concreto ciclópeo", "cantidad": 4.5, "unidad": "m3", "pagina": 1, "cita": "Concreto ciclopeo para cimiento corrido: 4.5 m3.", "en_catalogo": true },
+    { "material": "Concreto 3000 psi", "cantidad": 6.2, "unidad": "m3", "pagina": 1, "cita": "Zapatas y vigas de cimentacion en concreto de 3000 psi: 6.2 m3.", "en_catalogo": true },
+    { "material": "Acero de refuerzo 60000 psi", "cantidad": 830, "unidad": "kg", "pagina": 1, "cita": "Acero de refuerzo fy 420 MPa para zapatas y vigas: 480 kg. / Acero corrugado para columnas: 350 kg.", "en_catalogo": true },
+    { "material": "Concreto 4000 psi", "cantidad": 3.8, "unidad": "m3", "pagina": 1, "cita": "Columnas y viga de amarre en concreto 4000 psi: 3.8 m3.", "en_catalogo": true },
+    { "material": "Bloque de concreto 15 cm", "cantidad": 1250, "unidad": "un", "pagina": 2, "cita": "Muros en bloque de concreto 15 cm: 1250 unidades.", "en_catalogo": true },
+    { "material": "Mortero de pega 1:4", "cantidad": 2.1, "unidad": "m3", "pagina": 2, "cita": "Mortero de pega 1:4 para mamposteria: 2.1 m3.", "en_catalogo": true },
+    { "material": "Pañete liso", "cantidad": 96, "unidad": "m2", "pagina": 2, "cita": "Panete liso sobre muro, interior y exterior: 96 m2.", "en_catalogo": true },
+    { "material": "Pintura vinilo tipo 1", "cantidad": 14, "unidad": "gl", "pagina": 2, "cita": "Pintura vinilo tipo 1, dos manos: 14 galones.", "en_catalogo": true },
+    { "material": "Baldosa cerámica 30x30", "cantidad": 18, "unidad": "m2", "pagina": 2, "cita": "Piso en ceramica 30x30: 18 m2.", "en_catalogo": true },
+    { "material": "Teja termoacustica en PVC", "cantidad": 24, "unidad": "m2", "pagina": 2, "cita": "Teja termoacustica en PVC: 24 m2.", "en_catalogo": false }
+  ],
+  "advertencias": ["Teja termoacustica en PVC no está en el catálogo."]
+}
