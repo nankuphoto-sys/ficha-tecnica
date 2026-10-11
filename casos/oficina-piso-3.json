@@ -1,0 +1,15 @@
+{
+  "proyecto": "Adecuación de oficinas - Piso 3, Centro Empresarial Andino",
+  "items": [
+    { "material": "Perfil metálico IPE 200", "cantidad": 850, "unidad": "kg", "pagina": 1, "cita": "Refuerzo de entrepiso con viga IPE 200 según diseño estructural: 850 kg.", "en_catalogo": true },
+    { "material": "Lámina de drywall 1/2\"", "cantidad": 64, "unidad": "m2", "pagina": 1, "cita": "Muros divisorios en placa de yeso 1/2\" a dos caras: 64 m2.", "en_catalogo": true },
+    { "material": "Ventana en aluminio", "cantidad": 7.2, "unidad": "m2", "pagina": 1, "cita": "Ventanería en aluminio para fachada interior: 7.2 m2.", "en_catalogo": true },
+    { "material": "Puerta en madera entamborada", "cantidad": 3, "unidad": "un", "pagina": 1, "cita": "Puertas entamboradas de 0.90 m para salas de reunión: 3 unidades.", "en_catalogo": true },
+    { "material": "Cielo raso en PVC", "cantidad": 40, "unidad": "m2", "pagina": 1, "cita": "Cielo raso en PVC en zona de cafetería: 40 m2.", "en_catalogo": false },
+    { "material": "Cable eléctrico No. 12", "cantidad": 210, "unidad": "ml", "pagina": 2, "cita": "Cable THHN 12 para circuitos de iluminación: 150 metros lineales. / Cable No. 12 adicional para circuitos de tomas: 60 metros lineales.", "en_catalogo": true }
+  ],
+  "advertencias": [
+    "Paneles LED no tienen cantidad explícita: se omiten.",
+    "Cielo raso en PVC no está en el catálogo."
+  ]
+}

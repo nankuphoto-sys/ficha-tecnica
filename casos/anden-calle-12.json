@@ -1,0 +1,16 @@
+{
+  "proyecto": "Construccion de anden y sardinel Calle 12 entre carreras 4 y 6",
+  "items": [
+    { "material": "Recebo compactado", "cantidad": 38, "unidad": "m3", "pagina": 1, "cita": "Recebo compactado en capas de 15 cm: 38 m3.", "en_catalogo": true },
+    { "material": "Geotextil no tejido", "cantidad": 120, "unidad": "m2", "pagina": 1, "cita": "Geotextil no tejido bajo la base: 120 m2.", "en_catalogo": true },
+    { "material": "Concreto 3000 psi", "cantidad": 14.4, "unidad": "m3", "pagina": 1, "cita": "Placa de anden en concreto de 3000 psi, espesor 10 cm: 14.4 m3.", "en_catalogo": true },
+    { "material": "Malla electrosoldada", "cantidad": 96, "unidad": "m2", "pagina": 1, "cita": "Malla electrosoldada para la placa: 96 m2.", "en_catalogo": true },
+    { "material": "Adoquin de concreto 20x10", "cantidad": 45, "unidad": "m2", "pagina": 1, "cita": "Adoquin de concreto 20x10 en zona de acceso vehicular: 45 m2.", "en_catalogo": false },
+    { "material": "Sardinel prefabricado", "cantidad": 92, "unidad": "ml", "pagina": 2, "cita": "Sardinel prefabricado tipo A-80 en el costado norte: 80 ml. / Sardinel prefabricado adicional en esquinas y rampas: 12 ml.", "en_catalogo": true },
+    { "material": "Asfalto MDC-19", "cantidad": 22, "unidad": "t", "pagina": 2, "cita": "Carpeta asfaltica MDC-19 para parcheo de calzada: 22 toneladas.", "en_catalogo": true }
+  ],
+  "advertencias": [
+    "Arena para nivelacion viene en volquetas, unidad que no se puede convertir exactamente: se omite.",
+    "Adoquin de concreto 20x10 no está en el catálogo."
+  ]
+}

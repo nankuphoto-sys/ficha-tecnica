@@ -1,0 +1,17 @@
+{
+  "proyecto": "Remodelación de baño - Apartamento 402, Edificio Mirador del Parque",
+  "items": [
+    { "material": "Tubería PVC presión 1/2\"", "cantidad": 18, "unidad": "ml", "pagina": 1, "cita": "Tubería PVC presión 1/2\" para agua fría y caliente: 18 metros lineales.", "en_catalogo": true },
+    { "material": "Tubería PVC sanitaria 4\"", "cantidad": 6, "unidad": "ml", "pagina": 1, "cita": "Tubería PVC sanitaria 4\" para desagüe del sanitario: 6 ml.", "en_catalogo": true },
+    { "material": "Impermeabilizante cementicio", "cantidad": 25, "unidad": "kg", "pagina": 1, "cita": "Impermeabilizante cementicio en zona de ducha, dos capas: 25 kg.", "en_catalogo": true },
+    { "material": "Cemento gris", "cantidad": 200, "unidad": "kg", "pagina": 1, "cita": "Cemento gris para afinado de piso: 4 bultos de 50 kg.", "en_catalogo": true },
+    { "material": "Porcelanato 60x60", "cantidad": 9.5, "unidad": "m2", "pagina": 1, "cita": "Porcelanato 60x60 en piso y muros de ducha: 9.5 m2.", "en_catalogo": true },
+    { "material": "Estuco plástico", "cantidad": 22, "unidad": "m2", "pagina": 2, "cita": "Estuco plástico sobre muros fuera de la ducha: 22 m2.", "en_catalogo": true },
+    { "material": "Pintura vinilo tipo 1", "cantidad": 3, "unidad": "gl", "pagina": 2, "cita": "Pintura tipo 1 para muros y techo: 3 galones.", "en_catalogo": true },
+    { "material": "Sanitario de una pieza con ahorro de agua", "cantidad": 1, "unidad": "un", "pagina": 2, "cita": "Sanitario de una pieza con ahorro de agua: 1 unidad.", "en_catalogo": false }
+  ],
+  "advertencias": [
+    "Grifería monocontrol y espejo LED no tienen cantidad explícita: se omiten.",
+    "Sanitario de una pieza no está en el catálogo."
+  ]
+}

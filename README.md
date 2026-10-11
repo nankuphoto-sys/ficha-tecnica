@@ -59,11 +59,20 @@ La evaluación compara la salida del agente con la respuesta escrita a mano en `
 
 ### Resultados
 
+4 casos con trampas a propósito: unidades que hay que convertir ("galones" → gl, "4 bultos de 50 kg" → 200 kg), unidades que no se pueden convertir ("6 volquetas"), materiales fuera del catálogo, ítems sin cantidad y el mismo material repartido en varias líneas que hay que sumar. Modelo `claude-sonnet-5-5`, 3 intentos por caso.
+
 | Caso | Precisión | Cobertura | Igual en los 3 intentos |
 | --- | --- | --- | --- |
-| caseta-vigilancia | 88 % | 90 % | no |
+| anden-calle-12 | 100 % | 100 % | sí |
+| bano-apto-402 | 100 % | 100 % | sí |
+| caseta-vigilancia | 100 % | 100 % | sí |
+| oficina-piso-3 | 100 % | 100 % | sí |
 
-Modelo: `claude-sonnet-5-5`, 3 intentos. Resultados por intento: 10/10, 8/10 y 9/10. Los errores salieron de dos puntos: en 2 de 3 intentos no asoció "Piso en cerámica 30x30" con "Baldosa cerámica 30x30" del catálogo, y en 1 de 3 no sumó las dos partidas de acero (fy 420 MPa + corrugado = 830 kg).
+**Qué cambió y por qué.** La primera evaluación dio 87 de 93 ítems correctos (caseta-vigilancia con 88 % de precisión, oficina-piso-3 con 83 %). Todos los fallos tenían la misma causa: la herramienta `buscar_en_catalogo` solo aceptaba coincidencias exactas, así que "Piso en ceramica 30x30" no encontraba el sinónimo "ceramica 30x30" y "Puertas entamboradas" (plural) no encontraba "puerta entamborada". Se agregó una coincidencia parcial: si todas las palabras de un nombre o sinónimo del catálogo aparecen en la consulta (ignorando plurales), cuenta como encontrado y se marca `coincidencia: "parcial"` para que el agente lo anote en advertencias; si dos materiales distintos empatan, no adivina. Después del cambio: 93 de 93.
+
+**Con cautela:** son 4 documentos de ejemplo escritos para esta evaluación, y la misma persona escribió los casos y la corrección. Los documentos reales de obra son más largos y desordenados; el siguiente paso es evaluar con PDFs reales.
+
+Los PDFs se generan desde `ejemplos/fuentes/*.html` (por ejemplo, imprimiendo a PDF con Chrome).
 
 ## Estructura
 
@@ -78,13 +87,14 @@ src/
   extraer.ts     comando para un PDF
   evaluar.ts     comando de evaluación
 casos/           respuestas correctas escritas a mano
-ejemplos/        PDFs de prueba
+ejemplos/        PDFs de prueba (y sus fuentes HTML en ejemplos/fuentes/)
 tests/           pruebas con Vitest
 ```
 
 ## Límites conocidos
 
-- PDFs escaneados (imágenes) no tienen texto; habría que agregar OCR.
+- PDFs escaneados (imágenes) no tienen texto; habría que agregar OCR (o mandar la página como imagen a Claude).
+- La evaluación usa 4 documentos de ejemplo; falta medir con documentos reales.
 - Tablas complejas pueden perder su estructura al pasar a texto.
 - El catálogo es un JSON pequeño; en producción estaría en una base de datos.
 
