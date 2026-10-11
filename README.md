@@ -61,7 +61,9 @@ La evaluación compara la salida del agente con la respuesta escrita a mano en `
 
 | Caso | Precisión | Cobertura | Igual en los 3 intentos |
 | --- | --- | --- | --- |
-| caseta-vigilancia | _pendiente_ | _pendiente_ | _pendiente_ |
+| caseta-vigilancia | 88 % | 90 % | no |
+
+Modelo: `claude-sonnet-5-5`, 3 intentos. Resultados por intento: 10/10, 8/10 y 9/10. Los errores salieron de dos puntos: en 2 de 3 intentos no asoció "Piso en cerámica 30x30" con "Baldosa cerámica 30x30" del catálogo, y en 1 de 3 no sumó las dos partidas de acero (fy 420 MPa + corrugado = 830 kg).
 
 ## Estructura
 
@@ -91,4 +93,4 @@ tests/           pruebas con Vitest
 | Variable | Para qué | Por defecto |
 | --- | --- | --- |
 | `ANTHROPIC_API_KEY` | Clave de la API de Anthropic | (obligatoria) |
-| `ANTHROPIC_MODEL` | Modelo de Claude a usar | `claude-sonnet-5` |
+| `ANTHROPIC_MODEL` | Modelo de Claude a usar | `claude-sonnet-5-5` |

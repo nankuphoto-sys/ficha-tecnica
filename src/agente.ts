@@ -1,7 +1,7 @@
 import { ChatAnthropic } from "@langchain/anthropic";
-import { createAgent } from "langchain";
+import { createAgent, providerStrategy } from "langchain";
 import { buscarEnCatalogo } from "./catalogo.js";
-import { FichaSchema, type Ficha } from "./esquema.js";
+import { FichaSchema, FichaSchemaModelo, type Ficha } from "./esquema.js";
 import { leerPdf, paginasATexto } from "./leerPdf.js";
 
 const INSTRUCCIONES = `Eres un asistente que extrae materiales de documentos técnicos de construcción.
@@ -18,13 +18,15 @@ Reglas:
 6. Si el mismo material del catálogo aparece varias veces con la misma unidad, súmalo en un solo ítem
    y pon las citas separadas por " / ". "pagina" es la primera página donde aparece.`;
 
-export function crearAgente(modelo = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-5") {
+export function crearAgente(modelo = process.env.ANTHROPIC_MODEL ?? "claude-sonnet-5-5") {
   return createAgent({
     // Los modelos más nuevos de Claude no aceptan cambiar "temperature"; usamos los valores por defecto.
     model: new ChatAnthropic({ model: modelo }),
     tools: [buscarEnCatalogo],
     systemPrompt: INSTRUCCIONES,
-    responseFormat: FichaSchema,
+    // Salida estructurada nativa de Anthropic: los modelos nuevos no aceptan forzar una
+    // herramienta (tool_choice "any"/"tool"), que es lo que hace la estrategia por defecto.
+    responseFormat: providerStrategy(FichaSchemaModelo),
   });
 }
 

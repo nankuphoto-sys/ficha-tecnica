@@ -28,5 +28,20 @@ export const FichaSchema = z.object({
     .describe("Datos dudosos, materiales fuera de catálogo o unidades que no se pudieron convertir"),
 });
 
+/**
+ * Versión del esquema que se le manda al modelo. La salida estructurada nativa de Anthropic
+ * no acepta "minimum" en números, así que aquí van sin esas restricciones (las reglas quedan
+ * en la descripción). El resultado igual se valida después con FichaSchema, que sí es estricto.
+ */
+const ItemSchemaModelo = ItemSchema.extend({
+  cantidad: z.number().describe("Cantidad numérica del material (0 o mayor)"),
+  // Sin .int(): en Zod 4 agrega límites min/max que la API tampoco acepta.
+  pagina: z.number().describe("Página del PDF donde aparece (entero, 1 o mayor)"),
+});
+
+export const FichaSchemaModelo = FichaSchema.extend({
+  items: z.array(ItemSchemaModelo),
+});
+
 export type Item = z.infer<typeof ItemSchema>;
 export type Ficha = z.infer<typeof FichaSchema>;
